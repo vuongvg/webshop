@@ -194,7 +194,7 @@ const listRatingEdit = (dataFilter, pa_rating) =>
       .map((value, index) => {
          const listRatingFilter = dataFilter.filter(({ _id }) => _id >= value && _id < value + 1).map(({ count }) => count);
          const totalCount = eval(listRatingFilter.join("+"));
-         return { slug: String(value), count: totalCount, checked: +pa_rating === value };
+         return { slug: String(value), name: String(value), count: totalCount, checked: +pa_rating === value };
       })
       .filter(({ count }) => count)
       .sort((a, b) => b.slug - a.slug);
