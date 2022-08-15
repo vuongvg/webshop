@@ -11,7 +11,7 @@ const productsFilterCtrl = async (query) => {
       query.order = -1;
    } else query.order = 1;
 
-   if (!["date_created", "price", "name", "average_rating", "_id", "regular_price", ""].includes(query.orderby)) throw new Error("Field not correct");
+   // if (!["date_created", "price", "name", "average_rating", "_id", "regular_price", ""].includes(query.orderby)) throw new Error("Field not correct");
 
    if (query.orderby === "date" || !query.orderby) query.orderby = "date_created";
    if (!query.per_page) query.per_page = 20;
