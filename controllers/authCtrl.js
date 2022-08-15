@@ -21,10 +21,9 @@ const loginCtrl = async (email, password) => {
  
 const registerCtrl = async (email, password) => {
    const existedUser = await findUserByEmailDb(email);
-   if (existedUser) {
-      throw new Error("Email is existed!");
-   }
-   const { salt, hashedPassword } = encryptPassword(password);
+   if (existedUser) throw new Error("Email is existed!");
+
+   const { salt, hashedPassword } = encryptPassword(password); 
    return insertUser({
       email,
       salt,

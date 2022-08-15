@@ -1,31 +1,18 @@
 const express = require("express");
 const { loginCtrl, registerCtrl } = require("../controllers/authCtrl");
-const { validateMdw } = require("../middlewares/authMdw");
+const { catchErrorMdw } = require("../middlewares/catchErrorMdw");
+const { validateUserMdw } = require("../middlewares/validateUserMdw");
 
 const router = express.Router();
 
-router.post("/login",async (req, res) => {
-   try {
+router.post("/login",validateUserMdw,catchErrorMdw(401,async (req, res) => {
       const token =await loginCtrl(req.body.email,req.body.password);
       res.json({token});
-   } catch (error) {
-      console.log(`*** error /login ***`, error);
-      res.status(401).send(error.message);
-   }
-});
+}));
 
-router.post("/register", validateMdw, async (req, res) => {
-   try {
-      if (!req.body.password || req.body.password.length < 8) {
-         res.status(400).send("Password must contain at least 8 characters");
-         return;
-      }
+router.post("/register", validateUserMdw, catchErrorMdw(401,async (req, res) => {
       const result = await registerCtrl(req.body.email, req.body.password);
       res.json({ infoUser: { _id: result.insertedId, email: req.body.email } });
-   } catch (error) {
-      console.log(`*** error /register ***`, error);
-      res.status(401).send(error.message);
-   }
-});
+}));
 
 module.exports = router;

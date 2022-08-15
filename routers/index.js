@@ -12,9 +12,5 @@ router.use("/user", authMdw, requireAdminMdw, userRouter);
 router.use("/product/", productRouter);
 router.use("/crawl", crawlRouter);
 
-// router.post('/auth/login',(req,res)=>{
-//     console.log('req.body.username',req.body.username);
-//     res.send('ok')
-// })
 
 module.exports = router;

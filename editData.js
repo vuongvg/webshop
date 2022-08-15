@@ -36,7 +36,9 @@ const editData = () => {
          _links,
         
       }) => {
+         return {name,front_image}
          return {
+            name,
             back_image,
             front_image,
             guide,
@@ -52,7 +54,6 @@ const editData = () => {
             dimensions,
             id,
             images,
-            name,
             list_variation,
             on_sale,
             discount,
