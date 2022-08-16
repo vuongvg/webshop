@@ -10,7 +10,6 @@ const { notFoundMdw } = require("./routers/notFoundMdw");
 const { errorHandleMdw } = require("./middlewares/errorHandleMdw");
 const winston = require("winston");
 const path = require("path");
-const { morganMdw } = require("./middlewares/morganMdw");
 
 const port = process.env.PORT || 5001;
 console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
@@ -21,7 +20,7 @@ app.use(express.json());
 app.use( 
    cors({
       origin: "*",
-      // origin:"http://mywebsite.vn"
+      // origin:"http://mywebsite.vn" 
    })
 );
 
@@ -50,12 +49,12 @@ app.use(errorHandleMdw);
       await connectToDb(process.env.MONGODB_URI); 
    } catch (error) { 
       console.log(`  *** error`, error);
-      const fileName = new Date().toLocaleDateString().replace(/\//g, "");
-      await fs.createWriteStream(
-         `./public/errorDB-${fileName}.txt`, 
-         `${new Date()} -- code:  ${error.code} \n ${error.stack} \n\n`,  
-         { flag: "a" }
-      );
+      // const fileName = new Date().toLocaleDateString().replace(/\//g, "");
+      // await fs.createWriteStream(
+      //    `./public/errorDB-${fileName}.txt`, 
+      //    `${new Date()} -- code:  ${error.code} \n ${error.stack} \n\n`,  
+      //    { flag: "a" }
+      // );
    }
 })();
 
