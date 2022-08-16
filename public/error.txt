@@ -1,0 +1,107 @@
+POST - Tue, 16 Aug 2022 14:20:27 GMT - /api/auth/login - 401 - 13 - 1.986 ms Error: Invalid Email
+    at customError (D:\Project\My_project\back-end\common\common.js:2:18)
+    at validateUserMdw (D:\Project\My_project\back-end\middlewares\validateUserMdw.js:8:30)
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Project\My_project\back-end\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\Project\My_project\back-end\node_modules\express\lib\router\index.js:346:12)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (D:\Project\My_project\back-end\node_modules\express\lib\router\index.js:175:3)
+POST - Tue, 16 Aug 2022 14:20:44 GMT - /api/auth/login - 401 - 55 - 2.942 ms TypeError: Cannot read properties of undefined (reading 'findOne')
+    at findUserByEmailDb (D:\Project\My_project\back-end\database\userDb.js:5:26)
+    at loginCtrl (D:\Project\My_project\back-end\controllers\authCtrl.js:6:30)
+    at D:\Project\My_project\back-end\routers\auth.js:9:26
+    at D:\Project\My_project\back-end\middlewares\catchErrorMdw.js:4:19
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at validateUserMdw (D:\Project\My_project\back-end\middlewares\validateUserMdw.js:12:4)
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:114:3)
+POST - Tue, 16 Aug 2022 14:22:22 GMT - /api/auth/login - 401 - 55 - 4.920 ms TypeError: Cannot read properties of undefined (reading 'findOne')
+    at findUserByEmailDb (D:\Project\My_project\back-end\database\userDb.js:5:26)
+    at loginCtrl (D:\Project\My_project\back-end\controllers\authCtrl.js:6:30)
+    at D:\Project\My_project\back-end\routers\auth.js:9:26
+    at D:\Project\My_project\back-end\middlewares\catchErrorMdw.js:4:19
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at validateUserMdw (D:\Project\My_project\back-end\middlewares\validateUserMdw.js:12:4)
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:114:3) -------------------------------------------
+POST - Tue, 16 Aug 2022 14:22:46 GMT - /api/auth/login - 401 - 55 - 4.261 ms TypeError: Cannot read properties of undefined (reading 'findOne')
+    at findUserByEmailDb (D:\Project\My_project\back-end\database\userDb.js:5:26)
+    at loginCtrl (D:\Project\My_project\back-end\controllers\authCtrl.js:6:30)
+    at D:\Project\My_project\back-end\routers\auth.js:9:26
+    at D:\Project\My_project\back-end\middlewares\catchErrorMdw.js:4:19
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at validateUserMdw (D:\Project\My_project\back-end\middlewares\validateUserMdw.js:12:4)
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:114:3) 
+-------------------------------------------
+
+POST - Tue, 16 Aug 2022 14:22:51 GMT - /api/auth/login - 401 - 55 - 7.826 ms TypeError: Cannot read properties of undefined (reading 'findOne')
+    at findUserByEmailDb (D:\Project\My_project\back-end\database\userDb.js:5:26)
+    at loginCtrl (D:\Project\My_project\back-end\controllers\authCtrl.js:6:30)
+    at D:\Project\My_project\back-end\routers\auth.js:9:26
+    at D:\Project\My_project\back-end\middlewares\catchErrorMdw.js:4:19
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at validateUserMdw (D:\Project\My_project\back-end\middlewares\validateUserMdw.js:12:4)
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:114:3) 
+-------------------------------------------
+
+POST - Tue, 16 Aug 2022 14:23:27 GMT - /api/auth/login - 401 - 55 - 3.944 ms TypeError: Cannot read properties of undefined (reading 'findOne')
+    at findUserByEmailDb (D:\Project\My_project\back-end\database\userDb.js:5:26)
+    at loginCtrl (D:\Project\My_project\back-end\controllers\authCtrl.js:6:30)
+    at D:\Project\My_project\back-end\routers\auth.js:9:26
+    at D:\Project\My_project\back-end\middlewares\catchErrorMdw.js:4:19
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at validateUserMdw (D:\Project\My_project\back-end\middlewares\validateUserMdw.js:12:4)
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:114:3) 
+
+POST - Tue, 16 Aug 2022 14:23:32 GMT - /api/auth/login - 401 - 55 - 1.495 ms TypeError: Cannot read properties of undefined (reading 'findOne')
+    at findUserByEmailDb (D:\Project\My_project\back-end\database\userDb.js:5:26)
+    at loginCtrl (D:\Project\My_project\back-end\controllers\authCtrl.js:6:30)
+    at D:\Project\My_project\back-end\routers\auth.js:9:26
+    at D:\Project\My_project\back-end\middlewares\catchErrorMdw.js:4:19
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at validateUserMdw (D:\Project\My_project\back-end\middlewares\validateUserMdw.js:12:4)
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:114:3) 
+
+POST - Tue, 16 Aug 2022 14:23:35 GMT - /api/auth/login - 401 - 55 - 2.970 ms TypeError: Cannot read properties of undefined (reading 'findOne')
+    at findUserByEmailDb (D:\Project\My_project\back-end\database\userDb.js:5:26)
+    at loginCtrl (D:\Project\My_project\back-end\controllers\authCtrl.js:6:30)
+    at D:\Project\My_project\back-end\routers\auth.js:9:26
+    at D:\Project\My_project\back-end\middlewares\catchErrorMdw.js:4:19
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at validateUserMdw (D:\Project\My_project\back-end\middlewares\validateUserMdw.js:12:4)
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:114:3) 
+
+POST - Tue, 16 Aug 2022 14:24:01 GMT - /api/auth/login - 401 - 55 - 4.348 ms TypeError: Cannot read properties of undefined (reading 'findOne')
+    at findUserByEmailDb (D:\Project\My_project\back-end\database\userDb.js:5:26)
+    at loginCtrl (D:\Project\My_project\back-end\controllers\authCtrl.js:6:30)
+    at D:\Project\My_project\back-end\routers\auth.js:9:26
+    at D:\Project\My_project\back-end\middlewares\catchErrorMdw.js:4:19
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at validateUserMdw (D:\Project\My_project\back-end\middlewares\validateUserMdw.js:12:4)
+    at Layer.handle [as handle_request] (D:\Project\My_project\back-end\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (D:\Project\My_project\back-end\node_modules\express\lib\router\route.js:114:3) 
+
