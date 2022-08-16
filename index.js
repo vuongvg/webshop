@@ -28,7 +28,7 @@ app.use(
 app.get("/", (req, res) => {
    res.send("Sever is runing: " + process.env.MONGODB_URI);
 });
-app.use(morganMdw());
+// app.use(morganMdw());
 app.use(morgan("dev"));
 app.use("/error", express.static("temp"));
 app.use("/api", router);
