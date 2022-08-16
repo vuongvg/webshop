@@ -52,7 +52,7 @@ app.use(errorHandleMdw);
       console.log(`  *** error`, error);
       const fileName = new Date().toLocaleDateString().replace(/\//g, "");
       await fs.promises.appendFile(
-         `./public/errorDB-${fileName}.txt`, 
+         `../../temp/public/errorDB-${fileName}.txt`, 
          `${new Date()} -- code:  ${error.code} \n ${error.stack} \n\n`,  
          { flag: "a+" }
       );
