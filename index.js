@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 });
 // app.use(morganMdw());
 app.use(morgan("dev"));
-app.use("/error", express.static("temp"));
+app.use("/error", express.static("public"));
 app.use("/api", router);
 app.use(notFoundMdw);
 app.use(errorHandleMdw);
@@ -52,7 +52,7 @@ app.use(errorHandleMdw);
       console.log(`  *** error`, error);
       const fileName = new Date().toLocaleDateString().replace(/\//g, "");
       await fs.createWriteStream(
-         `./temp/errorDB-${fileName}.txt`, 
+         `./public/errorDB-${fileName}.txt`, 
          `${new Date()} -- code:  ${error.code} \n ${error.stack} \n\n`,  
          { flag: "a" }
       );
