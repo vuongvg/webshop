@@ -18,7 +18,7 @@ console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
 const app = express();
 
 app.use(express.json());
-app.use(
+app.use( 
    cors({
       origin: "*",
       // origin:"http://mywebsite.vn"
@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 });
 app.use(morganMdw());
 app.use(morgan("dev"));
-app.use("/static", express.static("public"));
+app.use("/error", express.static("temp"));
 app.use("/api", router);
 app.use(notFoundMdw);
 app.use(errorHandleMdw);
@@ -52,7 +52,7 @@ app.use(errorHandleMdw);
       console.log(`  *** error`, error);
       const fileName = new Date().toLocaleDateString().replace(/\//g, "");
       await fs.promises.appendFile(
-         `../temp/public/errorDB-${fileName}.txt`, 
+         `./temp/errorDB-${fileName}.txt`, 
          `${new Date()} -- code:  ${error.code} \n ${error.stack} \n\n`,  
          { flag: "a+" }
       );
