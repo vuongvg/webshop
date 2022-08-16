@@ -51,10 +51,10 @@ app.use(errorHandleMdw);
    } catch (error) { 
       console.log(`  *** error`, error);
       const fileName = new Date().toLocaleDateString().replace(/\//g, "");
-      await fs.promises.appendFile(
+      await fs.createWriteStream(
          `./temp/errorDB-${fileName}.txt`, 
          `${new Date()} -- code:  ${error.code} \n ${error.stack} \n\n`,  
-         { flag: "a+" }
+         { flag: "a" }
       );
    }
 })();

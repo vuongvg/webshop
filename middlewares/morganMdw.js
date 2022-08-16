@@ -1,8 +1,8 @@
 const fs = require("fs");
 const morgan = require("morgan");
 const path = require("path");
-
-const accessLogStream = fs.createWriteStream(path.join(__dirname, "../temp/error.txt"), { flags: "a" });
+// path.join(__dirname, "../temp/error.txt")
+const accessLogStream = fs.createWriteStream("../../temp/error.txt", { flags: "a" });
 
 const morganMdw = () => {
    return morgan(
