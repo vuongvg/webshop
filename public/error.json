@@ -1,0 +1,21 @@
+[
+   {
+      "message": "Invalid Email",
+      "time": "8/16/2022, 10:59:40 PM -- localhost:5001/api/auth/login -- 401",
+      "body": { "email": "vuongcdt@gmailcom", "password": "123456@A" },
+      "authorization": "Bearer",
+      "stack": [
+         "Error: Invalid Email",
+         "    at customError (D:/Project/My_project/back-end/common/common.js:2:18)",
+         "    at validateUserMdw (D:/Project/My_project/back-end/middlewares/validateUserMdw.js:7:30)",
+         "    at Layer.handle [as handle_request] (D:/Project/My_project/back-end/node_modules/express/lib/router/layer.js:95:5)",
+         "    at next (D:/Project/My_project/back-end/node_modules/express/lib/router/route.js:144:13)",
+         "    at Route.dispatch (D:/Project/My_project/back-end/node_modules/express/lib/router/route.js:114:3)",
+         "    at Layer.handle [as handle_request] (D:/Project/My_project/back-end/node_modules/express/lib/router/layer.js:95:5)",
+         "    at D:/Project/My_project/back-end/node_modules/express/lib/router/index.js:284:15",
+         "    at Function.process_params (D:/Project/My_project/back-end/node_modules/express/lib/router/index.js:346:12)",
+         "    at next (D:/Project/My_project/back-end/node_modules/express/lib/router/index.js:280:10)",
+         "    at Function.handle (D:/Project/My_project/back-end/node_modules/express/lib/router/index.js:175:3)"
+      ]
+   }
+]

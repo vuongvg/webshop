@@ -1,8 +1,9 @@
 const fs = require("fs");
 const errorHandleMdw = (err, req, res, next) => {
    if (err) {
+      console.log(`  *** err handle mdw`, err)
       req.error = err;
-      // Promise.resolve(writeError(err, req)).catch((err) => console.log("error write file", err));
+      Promise.resolve(writeError(err, req)).catch((e) => console.log("error write file", e));
       res.status(err.status || 400).send(err.message);
    } else {
       next();
