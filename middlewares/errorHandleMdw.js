@@ -2,7 +2,7 @@ const errorHandleMdw = (err, req, res, next) => {
    if (err) {
       err.stack = err.stack
       .split("\n")
-      .filter((line) => !line.match(/\\node_modules\\/) && !line.match(/\\errors\\customError/))
+      .filter((line) => !line.match(/\\node_modules\\/))
       .join("\n");
       console.log(err.status, err.message + "\n", err.stack);
       req.error = err;
