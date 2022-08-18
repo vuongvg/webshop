@@ -10,8 +10,7 @@ const { errorHandleMdw } = require("./middlewares/errorHandleMdw");
 
 const port = process.env.PORT || 5001;
 console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
-const timeDeloy = new Date().toLocaleTimeString('th-TH');
-console.log(`  *** timeDeloy`, timeDeloy)
+const timeDeloy = new Date().toLocaleTimeString();
 
 const app = express();
 
@@ -39,16 +38,6 @@ connectToDb(process.env.MONGODB_URI).catch((error) => {
    console.log(`  *** ERROR connect to DB`, error);
 });
 
-(async () => { 
-   try {
-      app.listen(port, () => {
-         console.log(`Sever is runing at port ${port}`);
-      });
-   } catch (error) {
-      console.log("*** ERROR APPPPPPPPPPPPPPPPPPP", error);
-   }
-})();
-
-// app.listen(port, () => {
-//    console.log(`Sever is runing at port ${port}`);
-// });
+app.listen(port, () => {
+   console.log(`Sever is runing at port ${port}`);
+});

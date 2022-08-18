@@ -6,6 +6,8 @@ const validateUserMdw = (req, res, next) => {
    const validateEmail = validator.isEmail(email, { allow_utf8_local_part: false });
 
    if (!validateEmail) return next(customError(401, "Invalid Email"));
+   // if (!validateEmail) throw new Error( "Invalid Email");
+
    if (!validatePassword(password)) return next(customError(401, "Invalid Password"));
 
    next();

@@ -1,6 +1,10 @@
 const errorHandleMdw = (err, req, res, next) => {
    if (err) {
-      console.log(`  *** ERROR handle mdw`, err);
+      err.stack = err.stack
+      .split("\n")
+      .filter((line) => !line.match(/\\node_modules\\/) && !line.match(/\\errors\\customError/))
+      .join("\n");
+      console.log(err.status, err.message + "\n", err.stack);
       req.error = err;
       res.status(err.status).send(err.message);
    } else {
