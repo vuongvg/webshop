@@ -2,7 +2,7 @@ const { db, connectToDb } = require(".");
 const { customError } = require("../errors/customError");
 
 const findOneProductBySlugDb = async (slug) => {
-   db.products || (await connectToDb());
+   db.products || (await connectToDb(process.env.MONGODB_URI));
    return await db.products.findOne(slug);
 };
 
@@ -19,7 +19,7 @@ const findAllProductsByQueryDb = async ({ per_page, page, order, orderby, slug, 
       const [min, max] = range_price.split(":");
       filter.price = { $gt: +min, $lt: +max };
    }
-   db.products || (await connectToDb());
+   db.products || (await connectToDb(process.env.MONGODB_URI));
    const dataDb = await db.products
       .aggregate([...configSearchAndFilterToAggregate(filter, key), ...configSortToAggregate(per_page, page, order, orderby)])
       .toArray();

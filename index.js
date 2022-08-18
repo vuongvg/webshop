@@ -2,7 +2,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
-const { connectToDb } = require("./database");
+const { connectToDb, db } = require("./database");
 const { editData } = require("./editData");
 const router = require("./routers");
 const { notFoundMdw } = require("./middlewares/notFoundMdw");
@@ -10,7 +10,7 @@ const { errorHandleMdw } = require("./middlewares/errorHandleMdw");
 
 const port = process.env.PORT || 5001;
 console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
-const timeDeloy = new Date().toLocaleTimeString('vi-VN',{timeZone:'Asia/Saigon'});
+const timeDeloy = new Date().toLocaleTimeString("vi-VN", { timeZone: "Asia/Saigon" });
 
 const app = express();
 
@@ -23,7 +23,8 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-   res.send("Sever is runing: " + timeDeloy );
+   res.send("Sever is runing: " + timeDeloy + db.products);
+
    // + /\@.+/.exec(process.env.MONGODB_URI)
 });
 app.use(morgan("dev"));
