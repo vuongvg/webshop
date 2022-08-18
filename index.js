@@ -1,15 +1,16 @@
-// require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const { connectToDb } = require("./database");
 const { editData } = require("./editData");
 const router = require("./routers");
-const { notFoundMdw } = require("./routers/notFoundMdw");
+const { notFoundMdw } = require("./middlewares/notFoundMdw");
 const { errorHandleMdw } = require("./middlewares/errorHandleMdw");
 
 const port = process.env.PORT || 5001;
 console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
+const timeDeloy = new Date().toLocaleTimeString();
 
 const app = express();
 
@@ -22,7 +23,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-   res.send("Sever is runing: " + /\@.+/.exec(process.env.MONGODB_URI));
+   res.send("Sever is runing: " + timeDeloy + /\@.+/.exec(process.env.MONGODB_URI));
 });
 app.use(morgan("dev"));
 app.use(express.static("public"));
@@ -33,9 +34,19 @@ app.use(errorHandleMdw);
 // console.log(`  *** editData()`, editData())
 
 connectToDb(process.env.MONGODB_URI).catch((error) => {
-   console.log(`  *** ERROR connect DB`, error);
+   console.log(`  *** ERROR connect to DB`, error);
 });
 
-app.listen(port, () => {
-   console.log(`Sever is runing at port ${port}`);
-});
+(async () => { 
+   try {
+      app.listen(port, () => {
+         console.log(`Sever is runing at port ${port}`);
+      });
+   } catch (error) {
+      console.log("*** ERROR APPPPPPPPPPPPPPPPPPP", error);
+   }
+})();
+
+// app.listen(port, () => {
+//    console.log(`Sever is runing at port ${port}`);
+// });

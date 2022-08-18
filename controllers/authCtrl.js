@@ -1,22 +1,24 @@
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
+const { customError } = require("../errors/customError");
 const { findUserByEmailDb, insertUser } = require("../database/userDb");
 
 const loginCtrl = async (email, password) => {
-   const existedUser = await findUserByEmailDb(email);
-   if (!existedUser) throw new Error("Email is not existed");
-   const { hashedPassword } = encryptPassword(password, existedUser.salt);
-   if (hashedPassword !== existedUser.hashedPassword) throw new Error("Password not correct");
-   
-   return jwt.sign(
-      {
-         userId:existedUser._id,
-      },
-      "IsInR5cCI6IkpXVCJ9.eyJ1",
-      {
-         expiresIn: 45 * 60,
-      }
-   );
+      const existedUser = await findUserByEmailDb(email);
+      if (!existedUser) throw new Error("Email is not existed");
+      // if (!existedUser) throw customError(503,"Email is not existed");
+      const { hashedPassword } = encryptPassword(password, existedUser.salt);
+      if (hashedPassword !== existedUser.hashedPassword) throw new Error("Password not correct");
+      
+      return jwt.sign(
+         { 
+            userId:existedUser._id,
+         },
+         "IsInR5cCI6IkpXVCJ9.eyJ1",
+         {
+            expiresIn: 45 * 60,
+         }
+      );
 };
  
 const registerCtrl = async (email, password) => {

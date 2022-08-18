@@ -1,7 +1,12 @@
 const { db } = require(".");
+const { customError } = require("../errors/customError");
 
 const findOneProductBySlugDb = async (slug) => {
-   return await db.products.findOne(slug);
+   try {
+      return await db.products.findOne(slug);
+   } catch (error) {
+      throw customError(503, "DB not connect");
+   }
 };
 
 const findAllProductsByQueryDb = async ({ per_page, page, order, orderby, slug, pa_color, pa_brand, range_price, pa_discount, pa_rating, key }) => {

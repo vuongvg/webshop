@@ -1,12 +1,13 @@
 const validator = require("validator");
-const { customError } = require("../common/common");
+const { customError } = require("../errors/customError");
 
 const validateUserMdw = (req, res, next) => {
    const { email, password } = req.body;
    const validateEmail = validator.isEmail(email, { allow_utf8_local_part: false });
-   if (!validateEmail) throw customError(401, "Invalid Email");
 
-   if (!validatePassword(password)) throw customError(401, "Invalid Password");
+   if (!validateEmail) return next(customError(401, "Invalid Email"));
+   if (!validatePassword(password)) return next(customError(401, "Invalid Password"));
+
    next();
 };
 

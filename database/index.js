@@ -10,5 +10,4 @@ const connectToDb = async (URI) => {
    db.users = database.collection("users");
    db.products = database.collection("products");
 };
-
 module.exports = { db, connectToDb };
