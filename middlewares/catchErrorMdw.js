@@ -3,7 +3,6 @@ const catchErrorMdw = (status, fn) => {
          try {
             await fn(req, res, next);
          } catch (error) {
-            console.log(`  *** error22222222`, error)
             next({ message: error.message, stack: error.stack, status:error.status||status });
             // next({ message: error.message, stack: error.stack, status:error.status});
          }
