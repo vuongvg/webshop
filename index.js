@@ -10,7 +10,8 @@ const { errorHandleMdw } = require("./middlewares/errorHandleMdw");
 
 const port = process.env.PORT || 5001;
 console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
-const timeDeloy = new Date().toLocaleTimeString();
+const timeDeloy = new Date().toLocaleTimeString('th-TH');
+console.log(`  *** timeDeloy`, timeDeloy)
 
 const app = express();
 
@@ -23,7 +24,8 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-   res.send("Sever is runing: " + timeDeloy + /\@.+/.exec(process.env.MONGODB_URI));
+   res.send("Sever is runing: " + timeDeloy );
+   // + /\@.+/.exec(process.env.MONGODB_URI)
 });
 app.use(morgan("dev"));
 app.use(express.static("public"));
