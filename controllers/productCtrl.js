@@ -1,7 +1,8 @@
 const { findOneProductBySlugDb, findAllProductsByQueryDb } = require("../database/productsDb");
+const { catchErrorDB } = require("../errors/catchErrorDB");
 
 const productCtrl = async (slug) => {
-   const product = await findOneProductBySlugDb({ slug });
+   const product = await catchErrorDB(findOneProductBySlugDb({ slug }));
 
    return { product, per_page: 1, page: 1, total_products: 1, total_page: 1 };
 };
@@ -18,7 +19,7 @@ const productsFilterCtrl = async (query) => {
    if (query.per_page > 50) query.per_page = 50;
    if (!query.page) query.page = 1;
 
-   const { per_page, page, list_products, total_products, filterSidebar } = await findAllProductsByQueryDb(query);
+   const { per_page, page, list_products, total_products, filterSidebar } = await catchErrorDB(findAllProductsByQueryDb(query));
    const total_page = Math.ceil(total_products / per_page);
 
    return { per_page, page, list_products, total_products, total_page, filterSidebar };

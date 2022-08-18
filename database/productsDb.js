@@ -1,12 +1,9 @@
-const { db } = require(".");
+const { db, connectToDb } = require(".");
 const { customError } = require("../errors/customError");
 
 const findOneProductBySlugDb = async (slug) => {
-   try {
-      return await db.products.findOne(slug);
-   } catch (error) {
-      throw customError(503, "DB not connect");
-   }
+   db.products || (await connectToDb());
+   return await db.products.findOne(slug);
 };
 
 const findAllProductsByQueryDb = async ({ per_page, page, order, orderby, slug, pa_color, pa_brand, range_price, pa_discount, pa_rating, key }) => {
@@ -22,7 +19,7 @@ const findAllProductsByQueryDb = async ({ per_page, page, order, orderby, slug, 
       const [min, max] = range_price.split(":");
       filter.price = { $gt: +min, $lt: +max };
    }
-
+   db.products || (await connectToDb());
    const dataDb = await db.products
       .aggregate([...configSearchAndFilterToAggregate(filter, key), ...configSortToAggregate(per_page, page, order, orderby)])
       .toArray();
