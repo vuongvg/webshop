@@ -10,7 +10,7 @@ const { errorHandleMdw } = require("./middlewares/errorHandleMdw");
 
 const port = process.env.PORT || 5001;
 console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
-const timeDeloy = new Date().toLocaleTimeString();
+const timeDeloy = new Date().toLocaleTimeString('vi-VN',{timeZone:'Asia/Saigon'});
 
 const app = express();
 
