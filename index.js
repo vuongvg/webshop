@@ -22,6 +22,9 @@ app.use(
       // origin:"http://mywebsite.vn"
    })
 );
+connectToDb(process.env.MONGODB_URI).catch((error) => {
+   console.log(`  *** ERROR connect to DB`, error);
+});
 
 app.get("/", (req, res) => {
    res.send("Sever is runing: " + timeDeloy + db.products);
@@ -36,9 +39,6 @@ app.use(errorHandleMdw);
 
 // console.log(`  *** editData()`, editData())
 
-connectToDb(process.env.MONGODB_URI).catch((error) => {
-   console.log(`  *** ERROR connect to DB`, error);
-});
 
 app.listen(port, () => {
    console.log(`Sever is runing at port ${port}`);
