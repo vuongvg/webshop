@@ -43,7 +43,3 @@ connectToDb(process.env.MONGODB_URI).catch((error) => {
 app.listen(port, () => {
    console.log(`Sever is runing at port ${port}`);
 });
-
-setInterval(() => {
-   console.log("DB: ", Object.keys(db));
-}, 20 * 1000);
