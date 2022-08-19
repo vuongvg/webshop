@@ -24,7 +24,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-   res.send("Sever is runing: " + timeDeloy + db.products);
+   res.status(200).send("Sever is runing: " + timeDeloy + Object.keys(db));
 
    // + /\@.+/.exec(process.env.MONGODB_URI)
 });
