@@ -34,15 +34,18 @@ app.get("/", (req, res) => {
    // + /\@.+/.exec(process.env.MONGODB_URI)
 });
 
-app.use("/api", checkConnectDbMdw, router); 
+app.use("/api", checkConnectDbMdw, router);
 app.use(notFoundMdw);
 app.use(errorHandleMdw);
 
 // console.log(`  *** editData()`, editData())
-
-connectToDb(process.env.MONGODB_URI).catch((error) => {
-   console.log(`  *** ERROR connect to DB`, error);
-});
+(async () => {
+   try {
+      await connectToDb(process.env.MONGODB_URI);
+   } catch (error) {
+      console.log(`  *** ERROR connect to DB`, error);
+   }
+})();
 
 // mongoose.connect(process.env.MONGODB_URI).then(()=>console.log('Connect DB')).catch(err=>console.log(err))
 
