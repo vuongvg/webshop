@@ -8,7 +8,7 @@ const connectToDb = async (URI) => {
       console.log("serverHeartbeatStarted: ", event);
    });
    mongodbClient.on("serverHeartbeatSucceeded", (event) => {
-      console.log("serverHeartbeatSucceeded: ", event);
+      console.log("serverHeartbeatSucceeded: ", );
    });
    mongodbClient.on("serverHeartbeatFailed", (event) => {
       console.log("serverHeartbeatFailed: ", event);
