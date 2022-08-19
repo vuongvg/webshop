@@ -26,13 +26,13 @@ app.use(
 app.use(morgan("dev"));
 app.use(express.static("public"));
 
-// app.get("/", (req, res) => {
-//    console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
-//    const result = "Sever is runing: " + `${timeDeloy} - ${Object.keys(db)}`;
-//    console.log(result);
-//    res.status(200).send(result);
-//    // + /\@.+/.exec(process.env.MONGODB_URI)
-// });
+app.get("/", (req, res) => {
+   console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
+   const result = "Sever is runing: " + `${timeDeloy} - ${Object.keys(db)}`;
+   console.log(result);
+   res.status(200).send(result);
+   // + /\@.+/.exec(process.env.MONGODB_URI)
+});
 
 app.use("/api", checkConnectDbMdw, router); 
 app.use(notFoundMdw);
