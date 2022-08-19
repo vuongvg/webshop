@@ -3,17 +3,14 @@ const { db, connectToDb } = require(".");
 const { catchErrorDB } = require("../errors/catchErrorDB");
 
 const findUserByEmailDb = async (email) => {
-   db.users || (await connectToDb(process.env.MONGODB_URI));
    return await db.users.findOne({ email });
 };
 
 const findUserByIdDb = async (_id) => {
-   db.users || (await connectToDb(process.env.MONGODB_URI));
    return await db.users.findOne({ _id: ObjectId(_id) });
 };
 
 const findByAllUsers = async ({ per_page = 10, page = 1 }) => {
-   db.users || (await connectToDb(process.env.MONGODB_URI));
    const total_users = await db.users.countDocuments({});
    const list_users = await db.users
       .find({})

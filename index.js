@@ -7,6 +7,7 @@ const { editData } = require("./editData");
 const router = require("./routers");
 const { notFoundMdw } = require("./middlewares/notFoundMdw");
 const { errorHandleMdw } = require("./middlewares/errorHandleMdw");
+const { checkConnectDbMdw } = require("./middlewares/checkConnectDbMdw");
 
 const port = process.env.PORT || 5001;
 console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
@@ -29,7 +30,7 @@ app.get("/", (req, res) => {
 });
 app.use(morgan("dev"));
 app.use(express.static("public"));
-app.use("/api", router);
+app.use("/api", checkConnectDbMdw, router);
 app.use(notFoundMdw);
 app.use(errorHandleMdw);
 
