@@ -4,7 +4,7 @@ const { customError } = require("../errors/customError");
 const checkConnectDbMdw = async (req, res, next) => {
    setInterval(() => {
       console.log("DB: ", db);
-   }, 1 * 60 * 1000);
+   }, 5 * 60 * 1000);
    try {
       //   db.users || (await connectToDb(process.env.MONGODB_URI));
    } catch (error) {
