@@ -46,4 +46,4 @@ app.listen(port, () => {
 
 setInterval(() => {
    console.log("DB: ", Object.keys(db));
-}, 1 * 60 * 1000);
+}, 20 * 1000);
