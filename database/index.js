@@ -12,6 +12,6 @@ const connectToDb = async (URI) => {
    db.products = database.collection("products");
    setInterval(() => {
       console.log("DB: ", db);
-   }, 5 * 60 * 1000);
+   }, 1 * 60 * 1000);
 };
 module.exports = { db, connectToDb };
