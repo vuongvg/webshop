@@ -1,4 +1,4 @@
-const { db } = require("../database");
+const { db, connectToDb } = require("../database");
 const { customError } = require("../errors/customError");
 const checkConnectDbMdw = async (req, res, next) => {
    try {
