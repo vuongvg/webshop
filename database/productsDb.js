@@ -1,5 +1,4 @@
-const { db, connectToDb } = require(".");
-const { customError } = require("../errors/customError");
+const { db } = require(".");
 
 const findOneProductBySlugDb = async (slug) => {
    return await db.products.findOne(slug);

@@ -1,6 +1,5 @@
 const { ObjectId } = require("mongodb");
-const { db, connectToDb } = require(".");
-const { catchErrorDB } = require("../errors/catchErrorDB");
+const { db } = require(".");
 
 const findUserByEmailDb = async (email) => {
    return await db.users.findOne({ email });

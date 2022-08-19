@@ -1,10 +1,9 @@
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 const { findUserByEmailDb, insertUser } = require("../database/userDb");
-const { catchErrorDB } = require("../errors/catchErrorDB");
 
 const loginCtrl = async (email, password) => {
-   const existedUser = await catchErrorDB(findUserByEmailDb(email));
+   const existedUser = await findUserByEmailDb(email);
    if (!existedUser) throw new Error("Email is not existed");
    // if (!existedUser) throw customError(503,"Email is not existed");
    const { hashedPassword } = encryptPassword(password, existedUser.salt);
