@@ -25,7 +25,7 @@ app.use(
 
 app.get("/", (req, res) => {
    res.send("Sever is runing: " + timeDeloy + db.products);
-   
+
    // + /\@.+/.exec(process.env.MONGODB_URI)
 });
 app.use(morgan("dev"));
@@ -43,3 +43,7 @@ connectToDb(process.env.MONGODB_URI).catch((error) => {
 app.listen(port, () => {
    console.log(`Sever is runing at port ${port}`);
 });
+
+setInterval(() => {
+   console.log("DB: ", Object.keys(db));
+}, 1 * 60 * 1000);
