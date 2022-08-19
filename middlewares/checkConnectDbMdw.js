@@ -7,7 +7,8 @@ const checkConnectDbMdw = async (req, res, next) => {
       console.log("DB: ", db);
    }, 5 * 60 * 1000);
    try {
-      db.users || (await connectToDb(process.env.MONGODB_URI));
+    //   db.users || (await connectToDb(process.env.MONGODB_URI));
+    console.log('DB reconnect');
    } catch (error) {
       console.log(error);
       next(customError(503, "DB not reconnect"));
