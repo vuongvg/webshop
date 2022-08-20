@@ -1,9 +1,7 @@
-const { findByAllUsers } = require("../database/userDb");
+const User = require("../model/userModel");
 
-const userCtrl = async (query) => {
-   const { total_users, list_users, per_page, page } = await findByAllUsers(query);
-   const total_pages = Math.ceil(total_users / per_page);
-   return { total_users, per_page, total_pages, page, list_users };
+const findUserById = async (_id) => {
+   return await User.findById({_id});
 };
 
-module.exports = { userCtrl };
+module.exports = { findUserById };

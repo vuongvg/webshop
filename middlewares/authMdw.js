@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { customError } = require("../errors/customError");
-const { findUserByIdDb } = require("../database/userDb");
+const User = require("../model/userModel");
 
 const authMdw = (req, res, next) => {
    const bearerToken = req.headers.authorization;
@@ -10,7 +10,7 @@ const authMdw = (req, res, next) => {
    jwt.verify(token, process.env.MY_PRIVATE_KEY, async (err, decoded) => {
       if (err) return next(customError(401,"Invalid token"))
 
-      const user = await findUserByIdDb(decoded.userId);
+      const user = await User.findById({_id:decoded.userId});
       if (!user) return next(customError(401,"User existed"))
 
       req.user = user;
@@ -18,10 +18,5 @@ const authMdw = (req, res, next) => {
    });
 };
 
-const requireAdminMdw = (req, res, next) => {
-   if (!req.user.isAdmin) return res.json(req.user);
-   
-   next();
-};
 
-module.exports = { authMdw, requireAdminMdw };
+module.exports = { authMdw };
