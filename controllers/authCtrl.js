@@ -3,8 +3,8 @@ const jwt = require("jsonwebtoken");
 const User = require("../model/userModel");
 
 const loginCtrl = async (email, password) => {
-   const existedUser = await User.findOne({ email: email })
-   console.log(`  *** existedUser`, existedUser.salt)
+   if (!email || !password) throw new Error("The email address or password is required");
+   const existedUser = await User.findOne({ email: email });
    console.log(`  *** existedUser`, Object.keys(existedUser))
    // const existedUser = await findUserByEmailDb(email);
    if (!existedUser) throw new Error("The email address or password is incorrect");
@@ -12,8 +12,7 @@ const loginCtrl = async (email, password) => {
    const { hashedPassword } = encryptPassword(password, existedUser.salt);
 
    if (hashedPassword !== existedUser.hashedPassword) throw new Error("The email address or password is incorrect");
-
-   return jwt.sign(
+   const token = jwt.sign(
       {
          userId: existedUser._id,
       },
@@ -22,11 +21,13 @@ const loginCtrl = async (email, password) => {
          expiresIn: 45 * 60,
       }
    );
+   return { token, username: existedUser.username, avatar: existedUser.avatar };
 };
 
 const registerCtrl = async (email, password) => {
+   if (!email || !password) throw new Error("The email address or password is required");
    // const existedUser = await findUserByEmailDb(email);
-   const existedUser = await await User.findOne({ email })
+   const existedUser = await await User.findOne({ email });
    if (existedUser) throw new Error("Email is existed!");
 
    const { salt, hashedPassword } = encryptPassword(password);
@@ -36,7 +37,7 @@ const registerCtrl = async (email, password) => {
    //    hashedPassword,
    //    dateCreate: new Date(),
    // });
-   return User.insertMany([{ email,password, salt, hashedPassword }]);
+   return User.insertMany([{ email, password, salt, hashedPassword }]);
 };
 
 const encryptPassword = (password, saltDB) => {

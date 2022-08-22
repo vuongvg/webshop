@@ -53,8 +53,8 @@ const findAllProductsByQueryDb = async (query) => {
       price.maxHandle = max;
    }
    const { list_products, total_products } = dataDb[0];
-
-   const total_page = Math.ceil(total_products[0]?.count / per_page);
+   const total_page = Math.ceil(total_products[0]?.count / per_page||0);
+   
    return {
       per_page,
       page,

@@ -5,7 +5,7 @@ const checkConnectDbMdw = async (req, res, next) => {
    try {
       if (!Product.db.collections.users) {
          console.log("Not connect DB");
-         await connectToDb();
+         // await connectToDb();
       }
    } catch (error) {
       console.log(error);
