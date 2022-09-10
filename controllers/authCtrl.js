@@ -1,17 +1,16 @@
 const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
+const { customError } = require("../errors/customError");
 const User = require("../model/userModel");
 
 const loginCtrl = async (email, password) => {
-   if (!email || !password) throw new Error("The email address or password is required");
+   if (!email || !password) throw customError(400, "The email address or password is required");
    const existedUser = await User.findOne({ email: email });
-   console.log(`  *** existedUser`, Object.keys(existedUser))
-   // const existedUser = await findUserByEmailDb(email);
-   if (!existedUser) throw new Error("The email address or password is incorrect");
-   // if (!existedUser) throw customError(503,"Email is not existed");
+
+   if (!existedUser) throw customError(400, "The email address or password is incorrect");
    const { hashedPassword } = encryptPassword(password, existedUser.salt);
 
-   if (hashedPassword !== existedUser.hashedPassword) throw new Error("The email address or password is incorrect");
+   if (hashedPassword !== existedUser.hashedPassword) throw customError(400, "The email address or password is incorrect");
    const token = jwt.sign(
       {
          userId: existedUser._id,
@@ -25,11 +24,10 @@ const loginCtrl = async (email, password) => {
 };
 
 const registerCtrl = async (email, password) => {
-   if (!email || !password) throw new Error("The email address or password is required");
-   // const existedUser = await findUserByEmailDb(email);
+   if (!email || !password) throw customError(400, "The email address or password is required");
    const existedUser = await await User.findOne({ email });
-   if (existedUser) throw new Error("Email is existed!");
 
+   if (existedUser) throw customError(400, "Email is existed!");
    const { salt, hashedPassword } = encryptPassword(password);
    // return insertUser({
    //    email,

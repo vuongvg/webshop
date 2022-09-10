@@ -1,8 +1,8 @@
 const express = require("express");
-const { catchErrorMdw } = require("../middlewares/catchErrorMdw");
+const { asyncWrapper } = require("../middlewares/asyncWrapper");
 const router = express.Router();
 
-router.get( "/",catchErrorMdw(401, async (req, res) => {
+router.get("/", asyncWrapper(async (req, res) => {
       res.set({ total_users: 1, per_page: 1, total_pages: 1, page: 1 });
       res.json(req.user);
    })

@@ -1,8 +1,12 @@
-const customError = (status, message, stack) => {
-   const error = new Error(message);
-   error.status = status;
-   if (stack) error.stack = stack;
-   return error;
+class CustomError extends Error {
+   constructor(status, message) {
+      super(message);
+      this.status = status;
+   }
+}
+
+const customError = (status, message) => {
+   return new CustomError(status, message);
 };
 
-module.exports = { customError };
+module.exports = { customError ,CustomError};

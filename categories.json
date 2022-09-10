@@ -1,0 +1,378 @@
+[
+    {
+        "name": "Baby",
+        "slug": "baby",
+        "categories": [
+            {
+                "name": "Accessories",
+                "slug": "accessories-baby"
+            },
+            {
+                "name": "Basics",
+                "slug": "basics-baby"
+            },
+            {
+                "name": "Clothing",
+                "slug": "clothing-baby"
+            },
+            {
+                "name": "Fancy dress costumes",
+                "slug": "fancy-dress-costumes-baby"
+            },
+            {
+                "name": "Hospital bag essentials",
+                "slug": "hospital-bag-essentials-baby"
+            },
+            {
+                "name": "New arrivals",
+                "slug": "new-arrivals-baby"
+            },
+            {
+                "name": "Outerwear",
+                "slug": "outerwear-baby"
+            },
+            {
+                "name": "Rompers",
+                "slug": "rompers-baby"
+            },
+            {
+                "name": "Shoes",
+                "slug": "shoes-baby"
+            }
+        ],
+        "image": {
+            "src": "https://lp2.hm.com/hmgoepprod?set=source[/1f/2a/1f2af7025f08628158447a9475afc403e7de8a95.jpg],origin[dam],category[kids_newborn_bodies],type[ENVIRONMENT],res[m],hmver[1]&call=url[file:/product/style]",
+            "alt": "3-pack wrapover bodysuits Nike Baby Hospital bag essentials"
+        }
+    },
+    {
+        "name": "Beauty",
+        "slug": "beauty",
+        "categories": [
+            {
+                "name": "Body bath",
+                "slug": "body-bath-beauty"
+            },
+            {
+                "name": "Brushes tools",
+                "slug": "brushes-tools-beauty"
+            },
+            {
+                "name": "Fragrance",
+                "slug": "fragrance-beauty"
+            },
+            {
+                "name": "Hair care",
+                "slug": "hair-care-beauty"
+            },
+            {
+                "name": "Makeup bags",
+                "slug": "makeup-bags-beauty"
+            },
+            {
+                "name": "Makeup",
+                "slug": "makeup-beauty"
+            },
+            {
+                "name": "Mini size",
+                "slug": "mini-size-beauty"
+            },
+            {
+                "name": "Nails",
+                "slug": "nails-beauty"
+            },
+            {
+                "name": "Skin care",
+                "slug": "skin-care-beauty"
+            }
+        ],
+        "image": {
+            "src": "https://lp2.hm.com/hmgoepprod?set=source[/88/ef/88efc564ac99157fb9d552bc357d34143717877b.jpg],origin[dam],category[beauty_bodybath_bathshower],type[ENVIRONMENT],res[m],hmver[4]&call=url[file:/product/style]",
+            "alt": "Sisal exfoliating mitt H&M Beauty Body bath"
+        }
+    },
+    {
+        "name": "Divided",
+        "slug": "divided",
+        "categories": [
+            {
+                "name": "Basics",
+                "slug": "basics-divided"
+            },
+            {
+                "name": "Cardigans jumpers",
+                "slug": "cardigans-jumpers-divided"
+            },
+            {
+                "name": "Dresses",
+                "slug": "dresses-divided"
+            },
+            {
+                "name": "Hoodies sweatshirts",
+                "slug": "hoodies-sweatshirts-divided"
+            },
+            {
+                "name": "Jackets coats",
+                "slug": "jackets-coats-divided"
+            },
+            {
+                "name": "Shirts and blouses",
+                "slug": "shirts-and-blouses-divided"
+            },
+            {
+                "name": "Shorts",
+                "slug": "shorts-divided"
+            },
+            {
+                "name": "Skirts",
+                "slug": "skirts-divided"
+            },
+            {
+                "name": "Tops",
+                "slug": "tops-divided"
+            },
+            {
+                "name": "Trousers leggings",
+                "slug": "trousers-leggings-divided"
+            }
+        ],
+        "image": {
+            "src": "https://lp2.hm.com/hmgoepprod?set=source[/0e/30/0e3044878ec8c3405728497feee5822a830cc63d.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+            "alt": "Pleated skirt Louis Philippe Sport Divided Skirts"
+        }
+    },
+    {
+        "name": "Kids",
+        "slug": "kids",
+        "categories": [
+            {
+                "name": "Accessories",
+                "slug": "accessories-kids"
+            },
+            {
+                "name": "Basics",
+                "slug": "basics-kids"
+            },
+            {
+                "name": "Clothing",
+                "slug": "clothing-kids"
+            },
+            {
+                "name": "Fancy dress costumes",
+                "slug": "fancy-dress-costumes-kids"
+            },
+            {
+                "name": "Halloween",
+                "slug": "halloween-kids"
+            },
+            {
+                "name": "Kids exclusive",
+                "slug": "kids-exclusive-kids"
+            },
+            {
+                "name": "New arrivals",
+                "slug": "new-arrivals-kids"
+            },
+            {
+                "name": "Outerwear",
+                "slug": "outerwear-kids"
+            },
+            {
+                "name": "Shoes",
+                "slug": "shoes-kids"
+            },
+            {
+                "name": "Sportswear",
+                "slug": "sportswear-kids"
+            }
+        ],
+        "image": {
+            "src": "https://lp2.hm.com/hmgoepprod?set=source[/ef/df/efdf16669f5d91ba0540a4e4225c0a7fd8b884be.jpg],origin[dam],category[],type[LOOKBOOK],res[z],hmver[1]&call=url[file:/product/main]",
+            "alt": "2-piece printed sweatshirt set Louis Philippe Sport Kids Halloween"
+        }
+    },
+    {
+        "name": "Ladies",
+        "slug": "ladies",
+        "categories": [
+            {
+                "name": "Blazers and waistcoats",
+                "slug": "blazers-and-waistcoats-ladies"
+            },
+            {
+                "name": "Cardigans and jumpers",
+                "slug": "cardigans-and-jumpers-ladies"
+            },
+            {
+                "name": "Dresses",
+                "slug": "dresses-ladies"
+            },
+            {
+                "name": "Hoodies sweatshirts",
+                "slug": "hoodies-sweatshirts-ladies"
+            },
+            {
+                "name": "Jackets and coats",
+                "slug": "jackets-and-coats-ladies"
+            },
+            {
+                "name": "Jeans",
+                "slug": "jeans-ladies"
+            },
+            {
+                "name": "Shirts and blouses",
+                "slug": "shirts-and-blouses-ladies"
+            },
+            {
+                "name": "Shoes",
+                "slug": "shoes-ladies"
+            },
+            {
+                "name": "Tops",
+                "slug": "tops-ladies"
+            },
+            {
+                "name": "Trousers",
+                "slug": "trousers-ladies"
+            }
+        ],
+        "image": {
+            "src": "https://lp2.hm.com/hmgoepprod?set=source[/06/cf/06cf5250829954aef0a1ca6d107dd6e421379123.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+            "alt": "Oxford shirt Allen Solly Ladies Shirts and blouses"
+        }
+    },
+    {
+        "name": "Men",
+        "slug": "men",
+        "categories": [
+            {
+                "name": "Basics",
+                "slug": "basics-men"
+            },
+            {
+                "name": "Hoodies sweatshirts",
+                "slug": "hoodies-sweatshirts-men"
+            },
+            {
+                "name": "Jeans",
+                "slug": "jeans-men"
+            },
+            {
+                "name": "Shirts",
+                "slug": "shirts-men"
+            },
+            {
+                "name": "Shorts",
+                "slug": "shorts-men"
+            },
+            {
+                "name": "Sportswear",
+                "slug": "sportswear-men"
+            },
+            {
+                "name": "Suits blazers",
+                "slug": "suits-blazers-men"
+            },
+            {
+                "name": "T shirts and tanks",
+                "slug": "t-shirts-and-tanks-men"
+            },
+            {
+                "name": "Trousers",
+                "slug": "trousers-men"
+            },
+            {
+                "name": "Underwear",
+                "slug": "underwear-men"
+            }
+        ],
+        "image": {
+            "src": "https://lp2.hm.com/hmgoepprod?set=source[/d7/da/d7da0c02449a9ece25c4942a13bbf4caf5b87d97.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+            "alt": "Regular Jeans Zara Men Jeans"
+        }
+    },
+    {
+        "name": "Sale",
+        "slug": "sale",
+        "categories": [
+            {
+                "name": "Basics",
+                "slug": "basics-sale"
+            },
+            {
+                "name": "Blazerswaistcoats",
+                "slug": "blazerswaistcoats-sale"
+            },
+            {
+                "name": "Dresses",
+                "slug": "dresses-sale"
+            },
+            {
+                "name": "Shirtsblouses",
+                "slug": "shirtsblouses-sale"
+            },
+            {
+                "name": "Shoes",
+                "slug": "shoes-sale"
+            },
+            {
+                "name": "Shorts",
+                "slug": "shorts-sale"
+            },
+            {
+                "name": "Skirts",
+                "slug": "skirts-sale"
+            },
+            {
+                "name": "Swimwear",
+                "slug": "swimwear-sale"
+            },
+            {
+                "name": "Tops",
+                "slug": "tops-sale"
+            },
+            {
+                "name": "Trousers",
+                "slug": "trousers-sale"
+            }
+        ],
+        "image": {
+            "src": "https://lp2.hm.com/hmgoepprod?set=source[/80/b2/80b21b37682bb3d92c5d60df7cdf4a7d85d29837.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+            "alt": "Linen-blend shirt Louis Philippe Sport Sale Ladies Shirtsblouses"
+        }
+    },
+    {
+        "name": "Sport",
+        "slug": "sport",
+        "categories": [
+            {
+                "name": "Accessories",
+                "slug": "accessories-sport"
+            },
+            {
+                "name": "Clothing",
+                "slug": "clothing-sport"
+            },
+            {
+                "name": "Outerwear",
+                "slug": "outerwear-sport"
+            },
+            {
+                "name": "Sports accessories",
+                "slug": "sports-accessories-sport"
+            },
+            {
+                "name": "Sportswear",
+                "slug": "sportswear-sport"
+            },
+            {
+                "name": "Swimwear",
+                "slug": "swimwear-sport"
+            }
+        ],
+        "image": {
+            "src": "https://lp2.hm.com/hmgoepprod?set=source[/a8/e4/a8e4038c49a6406f5a2e91061b3e7f79012f47d3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/style]",
+            "alt": "Sports vest top Nike Sport Ladies Clothing"
+        }
+    }
+]
