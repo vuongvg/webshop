@@ -132,7 +132,7 @@ const configSearchAndFilterToAggregate = (filter, key) => {
       return [
          ...key.split("_").map((char) => ({
             $match: {
-               key_search: {
+               tags: {
                   $regex: char,
                },
             },
