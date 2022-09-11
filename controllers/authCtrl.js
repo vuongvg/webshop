@@ -11,6 +11,7 @@ const loginCtrl = async (email, password) => {
    const { hashedPassword } = encryptPassword(password, existedUser.salt);
 
    if (hashedPassword !== existedUser.hashedPassword) throw customError(400, "The email address or password is incorrect");
+   console.log(`  *** existedUser`, existedUser);
    const token = jwt.sign(
       {
          userId: existedUser._id,
@@ -20,7 +21,7 @@ const loginCtrl = async (email, password) => {
          expiresIn: 45 * 60,
       }
    );
-   return { token, username: existedUser.username, avatar: existedUser.avatar };
+   return { token, email: existedUser.email, avatar: existedUser.avatar, _id: existedUser._id };
 };
 
 const registerCtrl = async (email, password) => {
@@ -35,7 +36,7 @@ const registerCtrl = async (email, password) => {
    //    hashedPassword,
    //    dateCreate: new Date(),
    // });
-   return User.insertMany([{ email, password, salt, hashedPassword }]);
+   return User.insertMany([{ email, salt, hashedPassword }]);
 };
 
 const encryptPassword = (password, saltDB) => {
