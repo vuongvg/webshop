@@ -27,7 +27,9 @@ app.use(
 );
 ///////////////
 
-
+const num=21
+num.toLocaleString()
+console.log(`  *** num`, num)
 
 ///////////////
 
