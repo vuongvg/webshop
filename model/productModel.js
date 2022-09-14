@@ -132,5 +132,5 @@ const productSchema = new mongoose.Schema(
    { timestamps: true, versionKey: false }
 );
 
-const Product = mongoose.model("Product", productSchema);
+const Product =new mongoose.model("Product", productSchema);
 module.exports = Product;

@@ -8,9 +8,11 @@ const authMdw = (req, res, next) => {
 
    const token = req.headers.authorization.split(" ")[1];
    jwt.verify(token, process.env.MY_PRIVATE_KEY, async (err, decoded) => {
+      console.log(`  *** err2`, err)
       if (err) return next(customError(401,"Invalid token"))
 
       const user = await User.findById({_id:decoded.userId});
+      console.log(`  *** decoded`, decoded)
       if (!user) return next(customError(401,"User existed"))
 
       req.user = user;

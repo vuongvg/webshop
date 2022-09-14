@@ -18,13 +18,16 @@ const loginCtrl = async (email, password) => {
       },
       process.env.MY_PRIVATE_KEY,
       {
-         expiresIn: 45 * 60,
+         expiresIn: 20 ,
       }
    );
-   return { token, email: existedUser.email, avatar: existedUser.avatar, _id: existedUser._id };
+   return { token, user: { ...existedUser._doc, salt: undefined, hashedPassword: undefined } };
 };
 
 const registerCtrl = async (email, password) => {
+   console.log(`  *** email, password`, email, password);
+   if (!/^(?=\S*[a-z]|\d)(?=\S*[A-Z])(?=\S*[^\w\s])\S{8,}$/.test(password))
+      throw customError(400, "Password containing at least 1 uppercase, 1 lowercase, 1 special character");
    if (!email || !password) throw customError(400, "The email address or password is required");
    const existedUser = await await User.findOne({ email });
 

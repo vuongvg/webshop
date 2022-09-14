@@ -16,25 +16,18 @@ const userSchema = new mongoose.Schema(
             message: "Invalid Email",
          },
       },
-      password: {
-         type: String,
-         trim: true,
-         required: [true, "Invalid Password"],
-         minlength: [8, "Password can not be less than 8 characters"],
-         maxlength: [50, "Password can not be more than 50 characters"],
-         validate: {
-            validator: (password) => {
-               return /^(?=\S*[a-z]|\d)(?=\S*[A-Z])(?=\S*[^\w\s])\S{8,}$/.test(password);
-            },
-            message: "Password containing at least 1 uppercase, 1 lowercase, 1 special character",
-         },
-      },
       salt: { type: String, required: true },
       hashedPassword: { type: String, required: true },
+      wishList: { type: Array, default: [] },
    },
-   { timestamps: true, versionKey: false }
+   // { collection: "users", timestamps: true, versionKey: false }
+   {timestamps: true, versionKey: false }
 );
 
-const User = mongoose.model("User", userSchema);
+// userSchema.statics.findAndModify = function (query, sort, doc, options, callback) {
+//    return this.collection.findAndModify(query, sort, doc, options, callback);
+// };
+
+const User = new mongoose.model("User", userSchema);
 
 module.exports = User;
