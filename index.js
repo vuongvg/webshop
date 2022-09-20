@@ -11,7 +11,6 @@ const { notFoundMdw } = require("./middlewares/notFoundMdw");
 const { errorHandleMdw } = require("./middlewares/errorHandleMdw");
 
 const { checkConnectDbMdw } = require("./middlewares/checkConnectDbMdw");
-const { Product } = require("./model/productModel");
 
 //////////////////////////
 const port = process.env.PORT || 5001;
