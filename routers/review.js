@@ -1,10 +1,10 @@
 const express=require('express')
-const { findAllReviews, findReviewBySlugProduct, insertReview } = require('../controllers/reviewCtrl')
+const { findAllReviews, findReviewBySlugProduct, createReview } = require('../controllers/reviewCtrl')
 const { asyncWrapper } = require('../middlewares/asyncWrapper')
 const router=express.Router()
 
 router.post('/',asyncWrapper(async(req,res)=>{
-    const result= await insertReview(req.body)
+    const result= await createReview(req.body)
     res.json(result)
 }))
 

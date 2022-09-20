@@ -19,9 +19,29 @@ const userSchema = new mongoose.Schema(
       salt: { type: String, required: true },
       hashedPassword: { type: String, required: true },
       wishList: { type: Array, default: [] },
+      cartList: { type: Array, default: [] },
+      // addressList: { type: Array, default: [] },
+      addressList: [
+         {
+            userId: { type: String, required: true },
+            cookie: { type: String, required: true },
+            address_title: { type: String, required: true },
+            first_name: { type: String, required: true },
+            last_name: { type: String, required: true },
+            address_1: { type: String, required: true },
+            address_2: { type: String, required: true },
+            city: { type: String, required: true },
+            state: { type: String, required: true },
+            postcode: { type: String, required: true },
+            country: { type: String, required: true },
+            email: { type: String, required: true },
+            phone: { type: String, required: true },
+            row: { type: String, required: true },
+         },
+      ],
    },
    // { collection: "users", timestamps: true, versionKey: false }
-   {timestamps: true, versionKey: false }
+   { timestamps: true, versionKey: false }
 );
 
 // userSchema.statics.findAndModify = function (query, sort, doc, options, callback) {

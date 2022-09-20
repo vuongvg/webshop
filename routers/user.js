@@ -1,5 +1,5 @@
 const express = require("express");
-const { findUserById, updateWishlistUser } = require("../controllers/userCtrl");
+const { findUserById, updateCartListUser, updateWishListUser, updateAddressListUser } = require("../controllers/userCtrl");
 const { asyncWrapper } = require("../middlewares/asyncWrapper");
 const router = express.Router();
 
@@ -7,18 +7,33 @@ router.get(
    "/",
    asyncWrapper(async (req, res) => {
       const result = await findUserById(req.user._id);
-      // res.set({ total_users: 1, per_page: 1, total_pages: 1, page: 1 });
-      res.json({...result._doc, salt: undefined, hashedPassword: undefined});
+      res.json({ ...result._doc, salt: undefined, hashedPassword: undefined });
    })
 );
 
 router.patch(
    "/wishlist/:id",
    asyncWrapper(async (req, res) => {
-      const result = await updateWishlistUser(req.params.id, req.body);
-      console.log(`  *** result`, result.modifiedCount)
+      const result = await updateWishListUser(req.params.id, req.body);
       res.json(result);
    })
 );
 
-module.exports = router;
+router.patch(
+   "/cartlist/:id",
+   asyncWrapper(async (req, res) => {
+      const result = await updateCartListUser(req.params.id, req.body);
+      res.json(result);
+   })
+);
+
+router.patch(
+   "/addresslist/:id",
+   asyncWrapper(async (req, res) => {
+      const result = await updateAddressListUser(req.params.id, req.body);
+      res.json(result);
+   })
+); 
+ 
+module.exports = router; 
+ 

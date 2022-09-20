@@ -9,9 +9,10 @@ const asyncWrapper = (fn) => {
             const message = Object.values(error.errors)
                .map((val) => val.message)
                .join(". ");
+
             next(customError(400, message));
          }
-         next(error)
+         next(error);
          // next({ message: error.message, stack: error.stack, status: error.status });
       }
    };

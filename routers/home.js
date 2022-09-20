@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get(
    "/",
-   asyncWrapper(async (req, res) => {
+   (async (req, res) => {
       console.log(`  *** home`);
       const result = await homeCtrl();
       res.json(result);

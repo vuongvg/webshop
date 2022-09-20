@@ -1,7 +1,7 @@
 const Reviews = require("../model/reviewsModel");
 
-const insertReview = async (data) => {
-   return await Reviews.insertMany(data);
+const createReview = async (data) => {
+   return await Reviews.create(data);
 };
 
 const findReviewBySlugProduct = async (slug) => {
@@ -12,4 +12,4 @@ const findAllReviews = async () => {
    return await Reviews.find({}).limit(20);
 };
 
-module.exports = { insertReview, findAllReviews, findReviewBySlugProduct };
+module.exports = { createReview, findAllReviews, findReviewBySlugProduct };

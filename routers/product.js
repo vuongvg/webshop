@@ -27,7 +27,7 @@ router.post(
       const result= await createProduct(req.body);
       
       // let result = [];
-      // await Promise.all(
+      // await Promise.all( 
       //    data.map(async(item) => {
       //     await  createProduct(item);
       //    })

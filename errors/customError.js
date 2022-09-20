@@ -8,5 +8,5 @@ class CustomError extends Error {
 const customError = (status, message) => {
    return new CustomError(status, message);
 };
-
+ 
 module.exports = { customError ,CustomError};

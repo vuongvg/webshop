@@ -3,7 +3,8 @@ const User = require("../model/userModel");
 const findUserById = async (_id) => {
    return await User.findById({ _id });
 };
-const updateWishlistUser = async (_id, data) => {
+
+const updateWishListUser = async (_id, data) => {
    return await User.updateOne(
       {
          _id,
@@ -30,4 +31,22 @@ const updateWishlistUser = async (_id, data) => {
    );
 };
 
-module.exports = { findUserById, updateWishlistUser };
+const updateCartListUser = async (_id, cartList) => {
+   return await User.updateOne(
+      {
+         _id,
+      },
+      cartList
+   );
+};
+
+const updateAddressListUser = async (_id, addressList) => {
+   return await User.updateOne(
+      {
+         _id,
+      },
+      addressList
+   );
+};
+
+module.exports = { findUserById, updateWishListUser, updateCartListUser, updateAddressListUser };

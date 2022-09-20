@@ -2,6 +2,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
+
 const { connectToDb } = require("./database/connect");
 const { editData } = require("./editData");
 const data = require("./products_end.json");
@@ -17,21 +18,20 @@ const port = process.env.PORT || 5001;
 const timeDeloy = new Date().toLocaleTimeString("vi-VN", { timeZone: "Asia/Saigon" });
 
 const app = express();
-
 app.use(express.json());
 app.use(
    cors({
-      origin: "*",
-      // origin:"http://mywebsite.vn"
+      origin: JSON.parse(process.env.CORS_URI),
+      credentials:true,            //access-control-allow-credentials:true
+      optionSuccessStatus:200
    })
 );
 ///////////////
 
-
 ///////////////
 
 app.use(morgan("dev"));
-app.use(express.static("public"));
+app.use(express.static("public")); 
 
 app.get("/", (req, res) => {
    console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
@@ -50,7 +50,7 @@ app.use(notFoundMdw);
 app.use(errorHandleMdw);
 
 connectToDb(); 
- 
+
 app.listen(port, () => {
    console.log(`Sever is runing at port ${port}`);
 });

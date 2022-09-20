@@ -8,7 +8,7 @@ const searchHintRouter = require("./searchHint");
 const categoriesRouter = require("./categories");
 const reviewRouter = require("./review");
 const homeRouter = require("./home");
-const testRouter = require("./test");
+const tokenRouter = require("./token");
 
 router.use("/home", homeRouter);
 router.use("/review", reviewRouter);
@@ -17,6 +17,6 @@ router.use("/search-hint", searchHintRouter);
 router.use("/auth", authRouter);
 router.use("/user", authMdw, userRouter);
 router.use("/product", productRouter);
-router.use("/test", testRouter);
+router.use("/token", tokenRouter);
 
 module.exports = router;
