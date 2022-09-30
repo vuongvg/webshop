@@ -41,8 +41,8 @@ const createProduct = async (data) => {
    data.slug = global[name] ? convertNameToSlug(name) + `-${global[name] + 1}` : convertNameToSlug(name);
    global[name]++;
 
-   const createProduct = await Product.create(data);
-   return createProduct;
+   const result = await Product.create(data);
+   return result;
 };
 
 // const createProduct = async (data) => {

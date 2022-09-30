@@ -24,7 +24,6 @@ const userSchema = new mongoose.Schema(
       addressList: [
          {
             userId: { type: String, required: true },
-            cookie: { type: String, required: true },
             address_title: { type: String, required: true },
             first_name: { type: String, required: true },
             last_name: { type: String, required: true },
@@ -36,7 +35,6 @@ const userSchema = new mongoose.Schema(
             country: { type: String, required: true },
             email: { type: String, required: true },
             phone: { type: String, required: true },
-            row: { type: String, required: true },
          },
       ],
    },

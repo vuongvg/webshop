@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
@@ -23,7 +23,7 @@ app.use(
       origin: JSON.parse(process.env.CORS_URI),
       credentials:true,            //access-control-allow-credentials:true
       optionSuccessStatus:200
-   })
+   }) 
 );
 ///////////////
 
