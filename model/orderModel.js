@@ -13,9 +13,9 @@ const orderSchema = new mongoose.Schema(
          email: { type: String, required: true },
          phone: { type: String, required: true },
       },
-      orderList: [],
+      orderList: [], 
       total:{
-         type
+         type:Number
       }
    },
    { timestamps: true, versionKey: false }
