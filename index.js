@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
@@ -34,7 +34,7 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
    console.log("process.env.PORT:", process.env.PORT, process.env.MONGODB_URI);
-   const result = "Sever is runing: " + `${timeDeloy}`;
+   const result = "Sever is runing: " + `${timeDeloy} / ${process.env.CORS_URI}`;
    console.log(result);
    res.status(200).send(result);
    // + /\@.+/.exec(process.env.MONGODB_URI)
