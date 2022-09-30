@@ -18,9 +18,16 @@ const timeDeloy = new Date().toLocaleTimeString("vi-VN", { timeZone: "Asia/Saigo
 
 const app = express();
 app.use(express.json());
+// app.use(
+//    cors({
+//       origin: JSON.parse(process.env.CORS_URI),
+//       credentials:true,            //access-control-allow-credentials:true
+//       optionSuccessStatus:200
+//    }) 
+// );
 app.use(
    cors({
-      origin: JSON.parse(process.env.CORS_URI),
+      origin: "*",
       credentials:true,            //access-control-allow-credentials:true
       optionSuccessStatus:200
    }) 
